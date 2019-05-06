@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php" : "~5.6|~7.0",
+        "php": "~7.1",
         "matthewbdaly/artisan-standalone": "^0.0.8",
         "orchestra/testbench": "^3.8",
         "phpunit/phpunit": ">=5.4.3"
@@ -28,11 +28,14 @@
     "autoload": {
         "psr-4": {
             "Tychovbh\\LaravelPackageSkeleton\\": "src"
-        }
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "Tychovbh\\LaravelPackageSkeleton\\": "tests"
+            "Tychovbh\\Tests\\LaravelPackageSkeleton\\": "tests"
         }
     },
     "scripts": {
