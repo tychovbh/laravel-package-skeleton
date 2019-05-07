@@ -1,6 +1,6 @@
 <?php
 
-namespace Tychovbh\LaravelPackageSkeleton\Console\Commands;
+namespace Tychovbh\PackageSkeleton\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -47,9 +47,9 @@ class MakeSkeleton extends Command
     protected $provider;
 
     /**
-     * @var string
+     * @var
      */
-    protected $file_name;
+    protected $namespace_test;
 
     /**
      * Create a new command instance.
@@ -71,14 +71,16 @@ class MakeSkeleton extends Command
         $this->package = $this->option('package') ?? $this->ask('Package name');
         $this->github = $this->option('github') ?? $this->ask('Your Github username');
         $this->title = ucwords(str_replace('-', ' ', $this->package));
-        $this->namespace = sprintf('%s\\\\%s\\\\', ucfirst($this->github), str_replace(' ', '', $this->title));
+        $this->namespace = sprintf('%s\\%s', ucfirst($this->github), str_replace(' ', '', $this->title));
+        $this->namespace_test = str_replace(ucfirst($this->github), ucfirst($this->github) . '\\Tests', $this->namespace);
         $this->provider = $this->option('provider') ?? $this->ask('Package Service Provider name');
-        $this->file_name = sprintf('%s/../../Providers/%s.php', __DIR__ , $this->provider);
 
         $this->composerMake()
             ->composerInstall()
             ->providerMake()
-            ->providerConfig();
+            ->providerConfig()
+            ->artisanMake()
+            ->testsMake();
 
         $this->line('Skeleton created');
     }
@@ -89,7 +91,9 @@ class MakeSkeleton extends Command
      */
     private function composerMake(): MakeSkeleton
     {
-        $replacements = [
+        $namespace = str_replace('\\', '\\\\', $this->namespace) . '\\\\';
+
+        file_replace('composer.json', [
             '{{name}}' => $this->github . '/' . $this->package,
             '{{description}}' => $this->option('description') ?? $this->ask('Package very short description'),
             '{{vendor}}' => $this->github,
@@ -98,18 +102,10 @@ class MakeSkeleton extends Command
             '{{author}}' => ucfirst($this->option('author') ?? $this->ask('Your name')),
             '{{email}}' => $this->option('email') ?? $this->ask('Your email address'),
             '{{author_homepage}}' => 'https://github.com/'. $this->github,
-            '{{namespace}}' => $this->namespace,
-            '{{namespace_test}}' => str_replace(ucfirst($this->github), ucfirst($this->github) . '\\\\Tests', $this->namespace),
-            '{{provider}}' => $this->namespace . $this->provider,
-        ];
-
-        $contents = file_get_contents(__DIR__ . '/files/composer.json');
-
-        foreach ($replacements as $str => $replacement) {
-            $contents = str_replace($str, $replacement, $contents);
-        }
-
-        file_put_contents('composer.json', $contents);
+            '{{namespace}}' => $namespace,
+            '{{namespace_test}}' => str_replace('\\', '\\\\', $this->namespace_test) . '\\\\',
+            '{{provider}}' => $namespace . $this->provider,
+        ]);
 
         return $this;
     }
@@ -143,7 +139,7 @@ class MakeSkeleton extends Command
      */
     private function providerConfig(): MakeSkeleton
     {
-        $name = $this->file_name;
+        $name = sprintf('src/Providers/%s.php', $this->provider);
         $file = file($name);
         $contents = '';
         foreach ($file as $key => $content) {
@@ -176,6 +172,7 @@ class MakeSkeleton extends Command
 
         if ($this->confirm('Does your package contain configuration?')) {
             $config = $this->ask('Name your config file');
+            file_put_contents(sprintf('config/%s.php', $config), default_file('config.php'));
             $string .= "\r\n";
             $string .= line(8, sprintf('$source = __DIR__ . \'/../config/%s.php\';', $config));
             $string .= line(8, 'if ($this->app instanceof \Illuminate\Foundation\Application && $this->app->runningInConsole()) {');
@@ -186,5 +183,26 @@ class MakeSkeleton extends Command
         }
 
         return $string;
+    }
+
+    /**
+     * @return MakeSkeleton
+     */
+    private function artisanMake(): MakeSkeleton
+    {
+        file_put_contents('artisan', default_file('artisan'));
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    private function testsMake()
+    {
+        file_replace('TestCase.php', [
+            '//namespace' => sprintf('namespace %s;', $this->namespace_test),
+            '//provider' => sprintf('return [\%s\\%s::class];', $this->namespace, $this->provider)
+        ], 'tests/TestCase.php');
+        return $this;
     }
 }

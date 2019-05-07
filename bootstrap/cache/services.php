@@ -14,7 +14,7 @@
     10 => 'Illuminate\\Translation\\TranslationServiceProvider',
     11 => 'Illuminate\\View\\ViewServiceProvider',
     12 => 'Matthewbdaly\\ArtisanStandalone\\Providers\\ServiceProvider',
-    13 => 'Tychovbh\\LaravelPackageSkeleton\\PackageSkeletonServiceProvider',
+    13 => 'Tychovbh\\PackageSkeleton\\PackageSkeletonServiceProvider',
   ),
   'eager' => 
   array (
@@ -25,7 +25,7 @@
     4 => 'Illuminate\\Pagination\\PaginationServiceProvider',
     5 => 'Illuminate\\View\\ViewServiceProvider',
     6 => 'Matthewbdaly\\ArtisanStandalone\\Providers\\ServiceProvider',
-    7 => 'Tychovbh\\LaravelPackageSkeleton\\PackageSkeletonServiceProvider',
+    7 => 'Tychovbh\\PackageSkeleton\\PackageSkeletonServiceProvider',
   ),
   'deferred' => 
   array (

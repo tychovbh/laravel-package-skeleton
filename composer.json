@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Tychovbh\\LaravelPackageSkeleton\\": "src"
+            "Tychovbh\\PackageSkeleton\\": "src"
         },
         "files": [
             "src/Helpers/helpers.php"
@@ -35,7 +35,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tychovbh\\Tests\\LaravelPackageSkeleton\\": "tests"
+            "Tychovbh\\Tests\\PackageSkeleton\\": "tests"
         }
     },
     "scripts": {
@@ -46,11 +46,6 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
-        },
-        "laravel": {
-            "providers": [
-                "Tychovbh\\LaravelPackageSkeleton\\PackageSkeletonServiceProvider"
-            ]
         }
     },
     "config": {
