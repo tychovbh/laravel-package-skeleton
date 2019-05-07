@@ -1,9 +1,9 @@
 <?php
 
-namespace Tychovbh\PackageSkeleton;
+namespace Tychovbh\LaravelPackageSkeleton;
 
 use Illuminate\Support\ServiceProvider;
-use Tychovbh\PackageSkeleton\Console\Commands\MakeSkeleton;
+use Tychovbh\LaravelPackageSkeleton\Console\Commands\MakeSkeleton;
 
 class PackageSkeletonServiceProvider extends ServiceProvider
 {

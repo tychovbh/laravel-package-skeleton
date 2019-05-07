@@ -1,6 +1,6 @@
 <?php
 
-namespace Tychovbh\PackageSkeleton\Console\Commands;
+namespace Tychovbh\LaravelPackageSkeleton\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -75,6 +75,8 @@ class MakeSkeleton extends Command
         $this->namespace_test = str_replace(ucfirst($this->github), ucfirst($this->github) . '\\Tests', $this->namespace);
         $this->provider = $this->option('provider') ?? $this->ask('Package Service Provider name');
 
+        $this->line('Skeleton created');
+        exit;
         $this->composerMake()
             ->composerInstall()
             ->providerMake()

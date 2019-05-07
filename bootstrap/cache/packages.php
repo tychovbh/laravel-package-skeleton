@@ -12,7 +12,7 @@ return [
     ],
     'tychovbh/laravel-package-skeleton' => [
         'providers' => [
-            'Tychovbh\\PackageSkeleton\\PackageSkeletonServiceProvider'
+            'Tychovbh\\LaravelPackageSkeleton\\PackageSkeletonServiceProvider'
         ]
     ]
 ];

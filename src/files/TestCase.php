@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 //namespace
 
-use Tychovbh\PackageSkeleton\Tests\TestCase as BaseTestCase;
+use Tychovbh\LaravelPackageSkeleton\Tests\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase
 {
