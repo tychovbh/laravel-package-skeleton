@@ -75,8 +75,8 @@ class MakeSkeleton extends Command
         $this->namespace_test = str_replace(ucfirst($this->github), ucfirst($this->github) . '\\Tests', $this->namespace);
         $this->provider = $this->option('provider') ?? $this->ask('Package Service Provider name');
 
-        $this->line('Skeleton created');
-        exit;
+        $this->line('Skeleton creating ...');
+
         $this->composerMake()
             ->composerInstall()
             ->providerMake()
@@ -84,7 +84,7 @@ class MakeSkeleton extends Command
             ->artisanMake()
             ->testsMake();
 
-        $this->line('Skeleton created');
+        $this->line('Skeleton created! :-D');
     }
 
     /**
@@ -174,7 +174,9 @@ class MakeSkeleton extends Command
 
         if ($this->confirm('Does your package contain configuration?')) {
             $config = $this->ask('Name your config file');
-            file_put_contents(sprintf('config/%s.php', $config), default_file('config.php'));
+            $file = sprintf('config/%s.php', $config);
+            make_directories($file);
+            file_put_contents($file, default_file('config.php'));
             $string .= "\r\n";
             $string .= line(8, sprintf('$source = __DIR__ . \'/../config/%s.php\';', $config));
             $string .= line(8, 'if ($this->app instanceof \Illuminate\Foundation\Application && $this->app->runningInConsole()) {');

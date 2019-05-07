@@ -4,6 +4,11 @@ All notable changes to `Laravel Package Skeleton` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## V0.7 Alpha  07-05-2019
+
+- remove debug code
+- fix config
+
 ## V0.6 Alpha  07-05-2019
 
 - Fix namespace
