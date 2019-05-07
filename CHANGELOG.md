@@ -4,6 +4,10 @@ All notable changes to `Laravel Package Skeleton` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## V0.5 Alpha  07-05-2019
+
+- Include provider
+
 ## V0.4 Alpha  07-05-2019
 
 - Make Artisan
