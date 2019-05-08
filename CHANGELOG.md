@@ -4,6 +4,10 @@ All notable changes to `Laravel Package Skeleton` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## V0.8 Alpha  08-05-2019
+
+- Copy artisan file during setup 
+
 ## V0.7 Alpha  07-05-2019
 
 - remove debug code

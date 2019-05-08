@@ -85,7 +85,6 @@ class MakeSkeleton extends Command
             ->composerInstall()
             ->providerMake()
             ->providerConfig()
-            ->artisanMake()
             ->testsMake();
 
         $this->line('Skeleton created! :-D');
@@ -200,15 +199,6 @@ class MakeSkeleton extends Command
         }
 
         return $string;
-    }
-
-    /**
-     * @return MakeSkeleton
-     */
-    private function artisanMake(): MakeSkeleton
-    {
-        file_put_contents('artisan', default_file('artisan'));
-        return $this;
     }
 
     /**
