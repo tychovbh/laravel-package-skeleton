@@ -4,6 +4,10 @@ All notable changes to `Laravel Package Skeleton` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## V1.0 Alpha  08-05-2019
+
+- Fix artisan file
+
 ## V0.9 Alpha  08-05-2019
 
 - Fix setup
