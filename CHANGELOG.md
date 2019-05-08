@@ -8,6 +8,8 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 - remove debug code
 - fix config
+- add readme
+- add coding standards
 
 ## V0.6 Alpha  07-05-2019
 

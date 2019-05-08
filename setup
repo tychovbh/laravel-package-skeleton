@@ -1,5 +1,3 @@
 <?php
 
 mkdir('bootstrap/cache', 0777, true);
-
-echo shell_exec('php vendor/tychovbh/laravel-package-skeleton/artisan make:skeleton');

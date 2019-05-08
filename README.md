@@ -6,9 +6,32 @@
 
 Laravel Package Skeleton is created by, and is maintained by Tycho, and is a Laravel/Lumen package to create new packages. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/tychovbh/laravel-package-skeleton/releases), [license](LICENSE.md), and [contribution guidelines](CONTRIBUTING.md)
 
+
 ## Install
+Install through composer
+
+    composer require --dev tychovbh/laravel-package-skeleton
+
+Run the setup this will create a folder bootstrap/cache. Do not remove this folder at any time
+    
+    php vendor/tychovbh/laravel-package-skeleton/setup
+
+All Laravel Artisan commands are now available, use the following one to install a package:
+
+    php artisan make:skeleton
+    
+You will be ask a few questions that will be needed to generate your composer.json file and Service Provider. 
 
 ## Usage
+
+You are now setup to develop your package with. The package comes with [orchestra/testbench](https://github.com/orchestral/testbench) for writing test cases. But you can decide to use whatever you desire.
+
+Use artisan to generate your controllers, models, migrations etc.
+
+If included during skelleton creation:
+- routes should be located in `{project_root}/routes`
+- views should be located in `{project_root}/views`
+- config should be located in `{project_root}/config`
 
 ## Change log
 
