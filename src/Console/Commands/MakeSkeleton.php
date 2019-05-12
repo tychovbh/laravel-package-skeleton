@@ -208,7 +208,7 @@ class MakeSkeleton extends Command
     {
         file_replace('TestCase.php', [
             '//namespace' => sprintf('namespace %s;', $this->namespace_test),
-            '//provider' => sprintf('return [\%s\\%s::class];', $this->namespace, $this->provider)
+            '//provider' => sprintf('return [\%s\\Providers\\%s::class];', $this->namespace, $this->provider)
         ], 'tests/TestCase.php');
         return $this;
     }
