@@ -4,9 +4,13 @@ All notable changes to `Laravel Package Skeleton` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## V1.3 Alpha  12-05-2019
+
+- Fix folder creation
+
 ## V1.2 Alpha  02-05-2019
 
-- Fid folder creation
+- Fix folder creation
 
 ## V1.1 Alpha  02-05-2019
 
