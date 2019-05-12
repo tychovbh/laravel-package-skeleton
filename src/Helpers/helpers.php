@@ -81,8 +81,14 @@ if (!function_exists('make_directories')) {
     {
         $dirs = explode('/', $path);
         array_pop($dirs);
-        if ($dirs) {
+        if (!$dirs) {
+            return;
+        }
+
+        try {
             mkdir(implode('/', $dirs), 0777, true);
+        } catch (\Exception $exception) {
+            //
         }
     }
 }
