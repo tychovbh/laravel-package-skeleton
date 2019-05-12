@@ -6,7 +6,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## V1.3 Alpha  12-05-2019
 
-- Fix folder creation
+- Fix composer dependencies
 
 ## V1.2 Alpha  02-05-2019
 
