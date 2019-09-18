@@ -4,28 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30af532048cf9ae3044fd794c2c0d9e3",
+    "content-hash": "5b8b365b2a5a4a865ea28f4e30a62e58",
     "packages": [
         {
             "name": "matthewbdaly/artisan-standalone",
-            "version": "0.0.8",
+            "version": "0.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthewbdaly/artisan-standalone.git",
-                "reference": "c4a4199fd8984dd52c23832676037c5b96eb8733"
+                "reference": "f2745f4c011a41ab2fdb7257226e5be4308da7ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthewbdaly/artisan-standalone/zipball/c4a4199fd8984dd52c23832676037c5b96eb8733",
-                "reference": "c4a4199fd8984dd52c23832676037c5b96eb8733",
+                "url": "https://api.github.com/repos/matthewbdaly/artisan-standalone/zipball/f2745f4c011a41ab2fdb7257226e5be4308da7ef",
+                "reference": "f2745f4c011a41ab2fdb7257226e5be4308da7ef",
                 "shasum": ""
             },
             "require-dev": {
                 "mockery/mockery": "~1.0",
-                "orchestra/testbench": "3.7",
-                "phpunit/phpunit": "^7.0",
-                "psy/psysh": "^0.9.8",
-                "squizlabs/php_codesniffer": "^3.3"
+                "orchestra/testbench": "4.0",
+                "phpunit/phpunit": "^8.0",
+                "psy/psysh": "^0.9.9",
+                "squizlabs/php_codesniffer": "^3.4"
             },
             "bin": [
                 "artisan"
@@ -58,7 +58,7 @@
                 "laravel",
                 "lumen"
             ],
-            "time": "2019-02-11T20:19:30+00:00"
+            "time": "2019-09-17T19:57:07+00:00"
         }
     ],
     "packages-dev": [
